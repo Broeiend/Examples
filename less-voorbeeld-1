@@ -18,8 +18,6 @@
 @tableEvenColColour: #339dc6;
 @tableEvenColColourDark: darken(@tableEvenColColour, 10%);
 
-
-
 /* -- General -- */
 
 .lft { float:left; position:relative; }
