@@ -1,5 +1,85 @@
 <?php
 
+/* ============= WP - Custom functie om 'kinderen' van taxonomy posts op te halen ============= */
+
+function custom_post_children( $customPostTitle ) {
+
+    global $post;
+
+    $postTitle = get_the_title();
+
+    $post_type = get_post_type_object( get_post_type($post) );
+    $taxonomyName = $post_type->name;
+
+    if(is_singular( 'over-yes' ) && $postTitle == $customPostTitle ):
+
+        query_posts(array('showposts' => -1, 'post_parent' => $post->ID, 'post_type' => $taxonomyName, 'order' => 'ASC'));
+        if (have_posts()) {
+
+            echo '<article class="content">';
+
+            $i = 0;
+            while ( have_posts() ) : the_post();
+                $i++;
+
+                    if($customPostTitle == 'Contact'):
+
+                        echo '<section class="contentBlock">';
+
+                            echo '<div class="contactBlockLeft">';
+                            echo '<h4>'.get_the_title().'</h4>';
+                            the_content();
+                            echo '</div>';
+                            echo '<div class="contactBlockRight">';
+                            echo '<div class="emailCalltoaction">';
+                            $contactFormUrl = get_post_meta($post->ID, 'dbt_contactFormUrl', true);
+                            if ($contactFormUrl == true) {
+                                echo '<p>Of vul het <a href="'.$contactFormUrl.'" title="contact">contact</a> formulier in.</p>';
+                                echo '<a class="linkRight" href="'.$contactFormUrl.'" title="contact">contact</a>';
+                            } else { }
+                            echo '</div>';
+                            echo '</div>';
+
+                        echo '</section>';
+
+                    elseif($customPostTitle == 'Publicaties'):
+
+                        echo '<section class="contentBlock transparentBg publicationBlock">';
+
+                            if (has_post_thumbnail()) {
+                                echo '<div class="col1-3 col1">';
+                                echo get_the_post_thumbnail($post->ID);
+                                echo '</div>';
+                            } else { }
+
+                            echo '<div class="col1-3 col2">';
+                            echo '<h3>'.get_the_title().'</h3>';
+                            the_excerpt();
+                            echo '</div>';
+
+                            echo '<div class="col1-3 col3"><ul class="styleType-circle-box-list">';
+
+                            $second_query = new WP_Query( array('showposts' => -1, 'post_parent' => $post->ID, 'post_type' => $taxonomyName, 'order' => 'ASC', 'orderby' => 'menu_order') );
+                            while( $second_query->have_posts() ) : $second_query->the_post();
+                                echo '<li><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></li>';
+                            endwhile;
+                            wp_reset_postdata();
+
+                            echo '</ul></div>';
+
+                        echo '</section>';
+                    else:
+                    endif;
+            endwhile;
+            echo '</article>';
+
+        } else {
+
+        }
+        wp_reset_query();
+    endif;
+}
+
 /* ============= WP - Voorbeeld variabele buttons op een Page ============= */
 
 // page id '53' = 'download de brochure' page
