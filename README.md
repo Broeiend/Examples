@@ -1,6 +1,6 @@
-Examples
+Voorbeelden code
 ========
 
-1.0 home - WIDC voorbeeld.html        : snippet voor de website http://werkenindechemie.nl/ <br />
-less-file-snippets.less               : snippet .less voorbeelden  <br />
-voorbeeld.php                         : Voorbeeld functies geschreven voor wordpress <br />
+Regel 1: Nooit een regel voor de tweede keer schrijven.
+Regel 2: Goede code, is zijn eigen handleiding
+Regel 3: Eerst een oplossing voor het probleem verzinnen, dan coderen.
