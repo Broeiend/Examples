@@ -2,7 +2,7 @@ Mijn Workflow:
 ========
 
 
-In het magazine BROEIEND staat het e.e.a. over mijn workflow. Het is een soort van handleiding die illustreerd hoe ik bovenstaande code gebruik voor verschillende projecten. Hieronder een samenvatting van de workflow:
+In het magazine BROEIEND staat het e.e.a. over mijn workflow. Het is een soort van handleiding die illustreert hoe ik bovenstaande code gebruik voor verschillende projecten. Hieronder een samenvatting van de workflow:
 
 
 <strong>Het photoshop bestand koppelen aan het programma <a href="http://macrabbit.com/slicy/" title="Slicy">slicy</a></strong>
