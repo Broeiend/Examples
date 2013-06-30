@@ -1,0 +1,294 @@
+<!doctype html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>TP - New</title>
+
+<link type="text/css" rel="stylesheet/less" href="css/style.less">
+<link type="text/css" rel="stylesheet" media="all" href="css/normalize.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/sequencejs-theme.modern-slide-in.css" />
+
+<!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" media="all" href="css/sequencejs-theme.modern-slide-in.ie.css" />
+<![endif]--> 
+
+<!--[if lte IE 9]>
+    <link rel="stylesheet" type="text/css" media="all" href="css/ie8.css" />
+<![endif]--> 
+
+<script type="text/javascript" src="js/less-1.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="js/tp-default.js"></script>
+
+<!-- Slider -->
+<script type="text/javascript" src="js/sequence.jquery-min.js"></script>
+
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+<![endif]-->
+
+<script>
+/mobile/i.test(navigator.userAgent) && !location.hash && setTimeout(function () {
+    if (!pageYOffset) window.scrollTo(0, 1);
+}, 1000);
+
+$(document).ready(function(){
+    var options = {
+        nextButton: true,
+        prevButton: true,
+        animateStartingFrameIn: true,
+        transitionThreshold: 250,
+        preloadTheseFrames: [0],
+        preloadTheseImages: [
+            "images/tn-model1.png",
+            "images/tn-model2.png",
+            "images/tn-model3.png"
+        ]
+    };
+
+    var sequence = $("#sequence").sequence(options).data("sequence");
+
+    sequence.afterLoaded = function(){
+        $("#nav").fadeIn(100);
+        $("#nav li:nth-child("+(sequence.settings.startingFrameID)+") img").addClass("active");
+    }
+
+    sequence.beforeNextFrameAnimatesIn = function(){
+        $("#nav li:not(:nth-child("+(sequence.nextFrameID)+")) img").removeClass("active");
+        $("#nav li:nth-child("+(sequence.nextFrameID)+") img").addClass("active");
+    }
+
+    $("#nav li").click(function(){
+        if(!sequence.active){
+            $(this).children("img").removeClass("active").children("img").addClass("active");
+            sequence.nextFrameID = $(this).index()+1;
+            sequence.goTo(sequence.nextFrameID);
+        }
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="cookieOverlayContainer">
+	<div id="cookieTab">
+		<div class="open"></div>
+		<div class="close"></div>
+	</div>
+	<div id="cookieContent">
+		<p>Om het gebruiksgemak te verbeteren wordt op deze website gebruik gemaakt van Cookies.</p>
+		<p><a id="btnCookie" title="Ik begrijp het" href="#">Ik begrijp het</a> | <a class="bottomLink" title="#" href="#">Cookiebeleid</a></p>
+	</div>
+</div>
+
+<div class="pageWidth centered">
+	<div id="header">
+		<object id="logo" width="350" height="130" style="visibility: visible;" data="/assets/flash/logo.swf" type="application/x-shockwave-flash">
+		<param value="false" name="menu">
+		<param value="opaque" name="wmode">
+		</object>
+
+
+		<nav id="secondary">
+			<ul>
+				<li>
+					<a href="1.4%20NewsOverview.html">Actueel</a>
+				</li>
+				<li>
+					<a href="1.9%20Vacatures.html">Vacatures</a>
+				</li>
+				<li class="last language">
+					<p>
+					(
+					<span class="active">NL</span>
+					/
+					<a title="select english language" href="#"> EN </a>
+					)
+					</p>
+				</li>
+			</ul>
+		</nav>
+
+		<nav id="primary">
+			<ul>
+				<li>
+					<a title="Homepagina" href="/demo/1.0%20home.html">Home</a>
+				</li>
+				<li>
+					<a title="Over ons" href="/demo/1.6%20aboutus.html">Over Ons</a>
+				</li>
+				<li>
+					<a title="Onze diensten" href="/demo/1.1%20diensten.html">Diensten</a>
+				</li>
+				<li>
+					<a title="Portfolio" href="/demo/1.2%20Portfolio%20Overview.html">Ons werk</a>
+				</li>
+				<li class="last">
+					<a title="Neem contact op met Terra Preta" href="1.9%20contact.html">Contact</a>
+				</li>
+			</ul>	
+			<ul id="zoekMenu">
+					<li>
+						<a id="btnZoeken" href="zoeken.html" title="zoeken"></a>
+					</li>
+					
+				<li>
+			</ul>
+		</nav>	
+	</div>
+</div>
+<div class="full lft slider">
+	<div id="slider-container">
+        <div id="slider-header">
+
+            <img class="prev" src="images/slider-ui/icon_arrow_left.png" alt="Previous Frame" />
+            <img class="next" src="images/slider-ui/icon_arrow_right.png" alt="Next Frame" />
+
+            <div id="sequence">
+                <ul>
+                    <li>
+                        <div class="sliderblockright animate-in">
+                            <div class="animate-in slidebtn mainbtn">
+                                <div class="btn-arrow-right"></div>
+                                <p>Offerte aanvragen</p>
+                                <div class="mainbtn-icon icon-offerte"></div>
+                                <a class="slidebarbtnoverlay" href="#" title="#"></a>
+                            </div>
+                            <div class="animate-in slidebtn subbtn">
+                                <div class="btn-arrow-right"></div>
+                                <a href="#" title="#" class="fadeHoverClr">Meer informatie</a>
+                            </div>
+                            <div class="slidesideshade"></div>
+                        </div>
+
+                        <div class="sliderblockleft animate-in">
+                            <img src="images/temp/img_header_bouwen.png" alt="Bouwen img" />
+                            <div class="centeredtext">
+                                <p class="big frst">Wij realiseren succesvolle websites</p>
+                                <p class="small">Gebruiksvriendelijk, goed vindbaar en eenvoudig te beheren</p>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="sliderblockright animate-in">
+                            <div class="animate-in slidebtn mainbtn">
+                                <div class="btn-arrow-right"></div>
+                                <p>Quickscan aanvragen</p>
+                                <div class="mainbtn-icon icon-quickscan"></div>
+                                <a class="slidebarbtnoverlay" href="#" title="#"></a>
+                            </div>
+                            <div class="animate-in slidebtn subbtn">
+                                <div class="btn-arrow-right"></div>
+                                <a href="#" title="#" class="fadeHoverClr">Meer informatie</a>
+                            </div>
+                            <div class="slidesideshade"></div>
+                        </div>
+
+                        <div class="sliderblockleft animate-in">
+                            <img src="images/temp/img_header_quickscan.png" alt="Bouwen img" />
+                            <div class="righttext">
+                                <p class="big frst">Gratis Quickscan t.w.v.  <strong>€450</strong></p>
+                                <p class="big">Hoe scoort uw website?</p>
+                                <p class="small">Bent u goed vindbaar? is uw website gebruiksvriendlijk?</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="sliderblockright animate-in">
+                            <div class="animate-in slidebtn mainbtn">
+                                <div class="btn-arrow-right"></div>
+                                <p>Meer over onze webshops</p>
+                                <div class="mainbtn-icon icon-ecommerce"></div>
+                                <a class="slidebarbtnoverlay" href="#" title="#"></a>
+                            </div>
+
+                            <div class="slidesideshade"></div>
+                        </div>
+
+                        <div class="sliderblockleft animate-in">
+                            <div class="lefttext">
+                                <p class="big frst">Wij maken succesvolle webshops</p>
+                                <p class="small">Focus op omzet, online vindbaar in Google voor uw klant en
+                                eenvoudig te beheren en uit te breiden</p>
+                            </div>
+
+                            <img src="images/temp/img_header_succesvol.png" alt="Bouwen img" />
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul id="nav">
+                <li><img src="images/temp/tn_header_bouwen.png" alt="Model 1" /></li>
+                <li><img src="images/temp/tn_header_quickscan.png" alt="Model 2" /></li>
+                <li><img src="images/temp/tn_header_succesvol.png" alt="Model 3" /></li>
+            </ul>
+        </div><!-- #slider-header -->
+    </div><!-- #slider-container -->
+</div><!-- .full .lft -->
+
+<div class="full lft">
+    <div class="pageWidth centered">
+        <div class="col1 lft sidebar">
+            <ul class="components">
+                <li>
+                    <div id="download_brochure" class="subbtn hoverEffect">
+                        <a title="#" href="#">Download onze brochure</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="mainbtn">
+                        <div class="btn-arrow-right"></div>
+                        <p>Offerte aanvragen</p>
+                        <div class="mainbtn-icon icon-offerte"></div>
+                        <a class="slidebarbtnoverlay" href="#" title="#"></a>
+                    </div>
+                </li>
+                <li>
+                    <div id="subscribe" class="subbtn hoverEffect">
+                        <a title="#" href="#">Nieuwsbrief aanvragen</a>
+                    </div>
+                </li>
+                <li class="news_top">
+                    <h2>
+                        NIEUWS</h2>
+                    <ul class="news">
+                        <li class="twitter socialIconEffect"><p>
+                            <a href="/nl/nieuws/2011/5/nieuws-item-2/" title="current()/title" class="fadeHoverClr">
+                            Wij kunnen uw volledige marketing van strategie tot en met de daadwerkelijke realisatie daarvan verzorgen.
+                            </a></p>
+                        </li>
+                        <li class="news"><p>
+                            <a href="/nl/nieuws/2011/5/nieuws-item-2/" title="current()/title" class="fadeHoverClr">
+                            Wij kunnen uw volledige marketing van strategie tot en met de daadwerkelijke realisatie daarvan verzorgen.
+                            </a></p>
+                        </li>
+                        <li class="facebook last"><p>
+                            <a href="/nl/nieuws/2011/5/nieuws-item-2/" title="current()/title" class="fadeHoverClr">
+                            Wij kunnen uw volledige marketing van strategie tot en met de daadwerkelijke realisatie daarvan verzorgen.
+                            </a></p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>                      
+            
+            <div class="social">
+               <div class="g-plusone" data-size="standard" data-count="false"></div>
+            </div>
+
+        </div><!-- .col1.sidebar -->
+    </div><!-- .pageWidth.centered -->    
+
+</div>
+
+</body>
+</html>
