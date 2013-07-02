@@ -1,3 +1,11 @@
+
+----------------------------------------
+<h3>Update: 02-07-2013</h3>
+
+Media.css toegevoegd. Up-scalen en Down-scalen t.o.v. schermresolutie. Voor nieuwere bestanden ook met @2x werken voor retina resolutie.
+
+
+
 Mijn Workflow:
 ========
 
@@ -33,8 +41,3 @@ Door optimaal gebruik te maken van de semantische waarde die html 5 elementen me
 
 Tot slot kunnen de bestanden gecomprimeerd worden. Hiervoor gebruik ik het programma <a href="http://incident57.com/codekit/" title="Codekit">Codekit</a>. Ook wel bekend als "steroids for developers". Het heeft allemaal handige features en één van de dingen waarvoor ik het gebruik is om het .less file te converteren naar een minified css bestand. 
 
-
-----------------------------------------
-<h3>Update:</h3>
-
-Media.css toegevoegd. Up-scalen en Down-scalen t.o.v. schermresolutie. Voor nieuwere bestanden ook met @2x werken voor retina resolutie.
