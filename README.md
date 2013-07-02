@@ -1,10 +1,9 @@
 
-----------------------------------------
 <h3>Update: 02-07-2013</h3>
 
 Media.css toegevoegd. Up-scalen en Down-scalen t.o.v. schermresolutie. Voor nieuwere bestanden ook met @2x werken voor retina resolutie.
 
-
+----------------------------------------
 
 Mijn Workflow:
 ========
