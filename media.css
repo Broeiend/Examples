@@ -1,0 +1,172 @@
+@media only screen
+  and (max-width : 739px)
+{
+    #headerPhoto, #footer .right,
+    .sidebar,
+    .overlay .left-image,
+    #zoekmenu,
+    ul.crumblepath,
+    #filter_portfolio,
+    #slider-container
+    { visibility: hidden !important; display: none!important; }
+
+    #header, #content, .pagewidth,
+    #footer, #footer .left, .content,
+    .content > .left, .content > .right,
+     ul.small, #menu,
+     .overlay, .overlay .right,
+     .overlay .right .titel, .overlay .overlay-content,
+     .nieuwsoverviewpage .overlay,
+     .nieuwsoverviewpage .overlay .left-image, .nieuwsoverviewpage .overlay .right .titel,
+     .overlay .left
+    { margin: 0; position: relative; width: 100%; height: auto; padding: 0px; }
+
+    .content { margin-top: 120px;}
+
+     #content.dienstenpage, #content.nieuwsoverviewpage, #content.portfoliopage { margin-top: 120px; }
+     #content.dienstenpage .content, #content.nieuwsoverviewpage .content { margin-top: 20px; }
+    .content > .left,
+    .content > .right
+    { margin-left: 40px; margin-right: 40px; width: auto; }
+
+    ul.small li { width: 100%; margin: 0px; }
+    #menu { top: 0px; margin-bottom: 20px;}
+    #menu ul { float: none; margin-left: 20px; clear: both; margin-right: 20px; }
+    #menu ul li { float: left; margin-left: 20px; margin-bottom: 10px;}
+    #menu ul li > a { padding: 0; margin: 0; background: none;  font-size: 14px;}
+    #subnavi { clear: both; float: left; margin-bottom: 10px; margin-left: 30px; margin-top: 30px; }
+
+    #logo { position: fixed; top: -30px; width: 100%; background: url("/images/logo_tp.png") no-repeat scroll left center white;}
+
+    .overlay .overlay-content { padding-bottom: 20px; }
+    .overlay .titel h1 { margin-top: 20px; }
+
+    ul.newsoverview > li { margin-left: 0px; margin-bottom: 10px; }
+    ul.newsoverview > li img { width: 90%; margin-left: 40px; }
+
+    ul.large li .left { margin-left: 0px; }
+    ul.large li .right { margin-left: 40px; margin-bottom: 0px; width: auto;}
+    ul.large > li { margin-bottom: 0px; }
+   	ul.small li { margin: 0 20px 20px 0; width: auto; }
+
+   	.overlay .left ul {margin-top:10px; margin-bottom: 10px;}
+
+   	.column-left, .column-right { width: auto; margin: 0 20px 0 40px; }
+
+   	#portfolio-overlay, .headermenu { width: auto; }
+   	.push { display: none; visibility: hidden; }
+   	.portfoliodetail .wrapper { width: auto; }
+   	.wrapper .leftcontent, .wrapper .rightcontent { clear: both; width: auto; margin: 0; }
+   	div.contactform fieldset input[type="submit"] { left: 0px; }
+   	.overlay .right { background: none; background-color: #000; }
+   	.nieuwsoverviewpage .overlay { margin-bottom: 0px; }
+   	.testimonial-quote img { display: none; visibility: hidden; }
+
+   	.column-left h2, .column-right h2 { min-height: 0; }
+
+   	.download.brochure { margin-top: 20px; margin-bottom: 20px; }
+   	.download.brochure .link a { top: 70%; }
+   	#contact-us { float: left; margin-left: 40px; }
+}
+
+@media only screen
+    and (min-width: 740px)
+{
+    body.mobile #menu ul li > a { padding: 0; margin: 10px; background: none;  font-size: 12px; }
+    .alternative_columns { background: url('/images/bg_content_scheiding_737.png') no-repeat scroll left top transparent; }
+}
+
+@media only screen
+	and (min-width : 740px)
+	and (max-width : 1010px)
+{
+	.overlay .left, .overlay .left-image { visibility: hidden !important; display: none!important; }
+	.content, .summary, .homeheader { margin-left: 0px; float: none;}
+	.homeheader { width: 36em; }
+
+	.pagewidth, .overlay .right { width: 100%; }
+	#menu, #subnavi {margin-right: 20px;}
+
+    #clienten-overlay { width: 100%;}
+   	#clienten-overlay ul { margin-left: auto;  margin-right: auto; width: 36em;}
+   	#portfolio-overlay { width: 100%; }
+   	ul.headermenu { margin-left: auto;  margin-right: auto; width: 36em;}
+
+    #mainmenu > li > a { font-size: 11px; padding: 20px 13px 5px 13px; }
+
+    ul.crumblepath { margin-left: 20px; }
+
+    .alternative_columns { background: url('/images/bg_content_scheiding_980.png') no-repeat scroll left top transparent; }
+
+    ul.small li .image:after, ul.small li .image:before { top: 37px; }
+    ul.small li .image:after { top: 37px; }
+}
+
+@media only screen
+	and (max-width : 1010px)
+{
+    .column50, .column60, .column80, .column20, .column25, .column33, .column40, .fixed .right, .fixed .left
+   	{
+   	    margin-top: 20px;
+   	    clear:both; width: 100%;
+   	}
+   	.fixed .right.portfolio { margin-left: 40px; margin-right: 40px; }
+   	#portfolio-slider > ul > li { left: 40px; }
+   	.row { margin-bottom: 0px; }
+   	.portfolio .carousel { position: relative; }
+   	.bgrow.bgwhite .bottompadding {  padding-bottom: 0px; }
+   	.bgrow.bgwhite { background: #f8f8f8; }
+}
+
+@media only screen
+	and (min-width : 1400px)
+{
+	.pagewidth { width: 1280px;	}
+	.content {	width: 1040px; }
+	ul.small li, .head .right, .summary > ul > li { width: 16em; }
+	.content .left { width: 14em; }
+
+	ul.large li .right { width: 24em; }
+	.portfoliodetail ul.large li .right { width: 28em; }
+	/* ul.large li > img { width: 39em; } */
+
+	.column-left, .column-right { width: 17.5em; }
+
+	.overlay .right { width: 40em;	}
+	.overlay .right .overlay-content { width: 28em; }
+	.portfoliodetail .wrapper { width: 40em; }
+	#clienten-overlay { width: 56em; }
+	#clienten-overlay ul li { width: 12em; }
+
+    .headermenu { width: 100%; padding-left: 40px; }
+    .content > .right { margin: 9px 40px 2em; width: 25em; }
+    ul.small li .image:after, ul.small li .image:before { top: 65px; }
+    ul.small li .image:after { top: 65px; }
+}
+
+@media only screen
+	and (min-width : 1600px)
+{
+	.pagewidth { width: 1550px; }
+	.content { width: 1310px; }
+	ul.small li, .head .right, .summary > ul > li { width: 18em; }
+	.content .left { width: 16em; }
+
+	ul.large li .right { width: 29em; }
+	.portfoliodetail ul.large li .right { width: 33em; }
+	/* ul.large li > img { width: 44em; } */
+
+	.column-left, .column-right { width: 20.5em; }
+
+	.overlay .right  { width: 45em; }
+    .overlay.small .right {}
+	.overlay .right .overlay-content { width: 33em; }
+	.portfoliodetail .wrapper { width: 45em; }
+	#clienten-overlay { width: 100%; }
+	ul.small li .image:after, ul.small li .image:before { top: 82px; }
+    ul.small li .image:after { top: 82px; }
+
+	.alternative_columns { background: url('/images/bg_content_scheiding_1550.png') no-repeat scroll left top transparent; }
+
+    .personswidth { max-width: 1140px; }
+}
