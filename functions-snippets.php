@@ -1,4 +1,51 @@
 <?php
+/* ============= WP - Custom sidebar functie om child pages van betreffende pagina op te halen, en active te maken ============= */
+function my_get_side_menu($IDOutsideLoop) {
+
+    global $post;
+
+    if ($post->post_parent == true) {
+        $this_post_parent = $post->post_parent;
+    } else {
+        $this_post_parent = $IDOutsideLoop;
+    }
+    $childrenList = array(
+        'post_parent' => $this_post_parent,
+        'post_type' => $post->post_type,
+        'order' => 'ASC',
+        'orderby' => 'menu_order'
+    );
+    $query = new WP_Query($childrenList);
+
+    if ( $query->have_posts() ) :
+        echo '<ul class="children-list">';
+
+        $custom_fields = get_post_custom($post->ID);
+        if (isset($custom_fields[dbt_checkbox_hidetitle][0]) && $custom_fields[dbt_checkbox_hidetitle][0] == True) :
+        else:
+            echo '<li class="parent-item"><a href="'.get_permalink($this_post_parent).'" title="'.esc_attr( get_the_title($this_post_parent)).'">'.get_the_title($this_post_parent).'</a></li>';
+        endif;
+
+        while ( $query->have_posts() ) : $query->the_post();
+
+            if($IDOutsideLoop == $post->ID) {
+                $activeClass = 'active';
+            } else {
+                $activeClass = '';
+            }
+
+            // exclude from sidemenu if checkbox is active
+            $custom_fields = get_post_custom($post->ID);
+            if (isset($custom_fields[dbt_checkbox_hide][0]) && $custom_fields[dbt_checkbox_hide][0] == True) :
+                $activeClass = 'hide';
+            else: endif;
+
+            echo '<li class="'.$activeClass.'"><a href="'.get_permalink().'" title="'.esc_attr( get_the_title()).'">'.get_the_title().'</a></li>';
+        endwhile;
+        echo '</ul>';
+    endif;
+    wp_reset_query();
+};
 
 /* ============= WP - Custom functie om 'kinderen' van taxonomy posts op te halen ============= */
 
